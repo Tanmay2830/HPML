@@ -1,0 +1,9 @@
+# Local/IDE
+.cursor/
+.cursor-server/
+.vscode/
+*.log
+
+# Secrets / SSH
+.ssh/
+.env

@@ -1,1 +1,0 @@
-{"timestamp":1770498573760,"paths":["./.bashrc","./.gitconfig","./.bash_history","./README.md","./.profile","./.bash_logout"]}
