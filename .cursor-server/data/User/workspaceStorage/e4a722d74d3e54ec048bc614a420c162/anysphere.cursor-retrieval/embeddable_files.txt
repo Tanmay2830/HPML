@@ -1,0 +1,6 @@
+README.md
+.bash_logout
+.profile
+.gitconfig
+.bashrc
+.bash_history

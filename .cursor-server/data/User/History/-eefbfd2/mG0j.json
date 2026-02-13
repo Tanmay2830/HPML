@@ -1,0 +1,10 @@
+{
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "git.autofetch": true,
+    "explorer.confirmDelete": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "remote.SSH.remotePlatform": {
+        "hpml-vm": "linux"
+    }
+}

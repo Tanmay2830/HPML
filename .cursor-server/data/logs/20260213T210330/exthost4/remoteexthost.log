@@ -1,0 +1,73 @@
+2026-02-13 21:11:25.032 [info] Extension host with pid 9606 started
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] Detecting sandbox support...
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] Platform: linux, Shell type: unknown
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] dirname: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/out/vs/workbench/api/node
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] Sandbox helper path: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/resources/helpers/cursorsandbox
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] process.resourcesPath: undefined
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] process.execPath: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/node
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] ripgrep path for sandboxing: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/resources/helpers/rg
+2026-02-13 21:11:25.032 [info] [shell-exec:sandbox] [isSandboxHelperSupported] Starting sandbox support check...
+2026-02-13 21:11:25.032 [info] [shell-exec:sandbox] [checkBinaryAvailable] Resolved binary path: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/resources/helpers/cursorsandbox
+2026-02-13 21:11:25.032 [info] [shell-exec:sandbox] [checkBinaryAvailable] Binary path exists: true
+2026-02-13 21:11:25.032 [info] [shell-exec:sandbox] [isSandboxHelperSupported] Running preflight with binary: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/resources/helpers/cursorsandbox
+2026-02-13 21:11:25.032 [info] [shell-exec:sandbox] [isSandboxHelperSupported] CWD: /home/tanmayagarwal
+2026-02-13 21:11:25.032 [error] [shell-exec:sandbox] [isSandboxHelperSupported] Preflight failed: Command failed: /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/resources/helpers/cursorsandbox --sandbox-policy-cwd /home/tanmayagarwal --sandbox-policy {"type":"workspace_readwrite","cwd":"/home/tanmayagarwal","additional_readwrite_paths":[],"additional_readonly_paths":[],"network_access":false,"disable_tmp_write":false,"block_git_writes":false} --preflight-only -- /bin/true
+Error: Failed to apply sandbox: Failed to apply Landlock: Step 5/7 (landlock) failed: Failed to apply Landlock: Landlock V3 filesystem restrictions not supported. Error: fully incompatible access-rights: BitFlags<AccessFs>(0b111111111110010, WriteFile | RemoveDir | RemoveFile | MakeChar | MakeDir | MakeReg | MakeSock | MakeFifo | MakeBlock | MakeSym | Refer | Truncate). Ensure Landlock LSM is enabled (CONFIG_SECURITY_LANDLOCK=y) on a kernel with V3 support.
+
+2026-02-13 21:11:25.032 [error] [shell-exec:sandbox] [isSandboxHelperSupported] Exit status: 1
+2026-02-13 21:11:25.032 [error] [shell-exec:sandbox] [isSandboxHelperSupported] Stderr: Error: Failed to apply sandbox: Failed to apply Landlock: Step 5/7 (landlock) failed: Failed to apply Landlock: Landlock V3 filesystem restrictions not supported. Error: fully incompatible access-rights: BitFlags<AccessFs>(0b111111111110010, WriteFile | RemoveDir | RemoveFile | MakeChar | MakeDir | MakeReg | MakeSock | MakeFifo | MakeBlock | MakeSym | Refer | Truncate). Ensure Landlock LSM is enabled (CONFIG_SECURITY_LANDLOCK=y) on a kernel with V3 support.
+
+2026-02-13 21:11:25.032 [info] [ExtHostShellExec] Sandbox support detected: false
+2026-02-13 21:11:25.041 [info] Lock '/home/tanmayagarwal/.cursor-server/data/User/workspaceStorage/e56d5c49829c9ddd47d65daca7283ff3/vscode.lock': Lock acquired.
+2026-02-13 21:11:25.123 [info] [ExtHostShellExec] Initializing terminal executor with userTerminalHint: undefined
+2026-02-13 21:11:25.133 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-02-13 21:11:25.135 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2026-02-13 21:11:25.135 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2026-02-13 21:11:25.257 [info] ExtHostSearch [cursorIgnore] internal fileSearch start reason=cursorIgnoreCheck roots=1 include=**/.cursorignore maxResults=0 numThreads=(default) folderQueries=[{"cwd":"/home/tanmayagarwal","disregardIgnoreFiles":false,"disregardParentIgnoreFiles":true,"disregardGlobalIgnoreFiles":true,"ignoreSymlinks":false,"rgNoIgnore":false,"rgNoIgnoreParent":true,"rgNoIgnoreGlobal":true,"rgFollow":true}]
+2026-02-13 21:11:25.349 [info] Extension activated success: vscode.emmet — 44ms (code loading: 22ms, activate call: 12ms, activate resolved: 10ms)
+2026-02-13 21:11:25.349 [info] Extension activated success: vscode.extension-editing — 43ms (code loading: 33ms, activate call: 1ms, activate resolved: 9ms)
+2026-02-13 21:11:25.369 [info] ExtHostSearch /home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/node_modules/@vscode/ripgrep/bin/rg --files --hidden --case-sensitive --no-require-git -g '**/.cursorignore' -g '!**/.git' -g '!**/.svn' -g '!**/.hg' -g '!**/.DS_Store' -g '!**/Thumbs.db' -g '!**/node_modules' -g '!**/bower_components' -g '!**/*.code-search' --no-ignore-parent --follow --threads '10' --no-config --no-ignore-global
+ - cwd: /home/tanmayagarwal
+ - Sibling clauses: {}
+2026-02-13 21:11:25.385 [info] ExtHostSearch Search finished. Stats: {"cmdTime":20,"fileWalkTime":20,"directoriesWalked":0,"filesWalked":0,"cmdResultCount":0}
+2026-02-13 21:11:25.385 [info] ExtHostSearch [cursorIgnore] internal fileSearch done in 128ms limitHit=false failed=false resultCount=0 cmdTime=20 fileWalkTime=20 providerTime=(unknown)
+2026-02-13 21:11:25.476 [info] Extension activated success: vscode.markdown-language-features — 253ms (code loading: 116ms, activate call: 9ms, activate resolved: 128ms)
+2026-02-13 21:11:25.477 [info] ExtensionService#_doActivateExtension anysphere.cursor-agent, startup: true, activationEvent: '*'
+2026-02-13 21:11:25.477 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: anysphere.cursor-agent-exec
+2026-02-13 21:11:25.477 [info] ExtensionService#_doActivateExtension anysphere.cursor-polyfills-remote, startup: true, activationEvent: '*'
+2026-02-13 21:11:25.822 [info] Extension activated success: vscode.git-base — 239ms (code loading: 239ms, activate call: 0ms, activate resolved: 0ms)
+2026-02-13 21:11:25.822 [info] Extension activated success: anysphere.cursor-polyfills-remote — 274ms (code loading: 274ms, activate call: 0ms, activate resolved: 0ms)
+2026-02-13 21:11:25.822 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*', root cause: anysphere.cursor-agent-exec
+2026-02-13 21:11:25.822 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-02-13 21:11:25.891 [info] Extension activated success: anysphere.cursor-agent — 309ms (code loading: 237ms, activate call: 2ms, activate resolved: 70ms)
+2026-02-13 21:11:25.979 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: vscode.markdown-language-features
+2026-02-13 21:11:26.009 [info] ExtensionService#_doActivateExtension vscode.tunnel-forwarding, startup: false, activationEvent: 'onTunnel'
+2026-02-13 21:11:26.049 [info] Extension activated success: vscode.github — 77ms (code loading: 68ms, activate call: 1ms, activate resolved: 8ms)
+2026-02-13 21:11:26.056 [info] Extension activated success: vscode.markdown-math — 7ms (code loading: 7ms, activate call: 0ms, activate resolved: 0ms)
+2026-02-13 21:11:26.098 [info] Extension activated success: vscode.tunnel-forwarding — 3ms (code loading: 2ms, activate call: 1ms, activate resolved: 0ms)
+2026-02-13 21:11:26.131 [info] Extension activated success: vscode.git — 166ms (code loading: 48ms, activate call: 3ms, activate resolved: 115ms)
+2026-02-13 21:11:26.131 [info] ExtensionService#_doActivateExtension anysphere.cursor-retrieval, startup: true, activationEvent: '*', root cause: anysphere.cursor-agent-exec
+2026-02-13 21:11:26.475 [info] Extension activated success: anysphere.cursor-retrieval — 253ms (code loading: 239ms, activate call: 2ms, activate resolved: 12ms)
+2026-02-13 21:11:26.476 [info] ExtensionService#_doActivateExtension anysphere.cursor-agent-exec, startup: true, activationEvent: '*'
+2026-02-13 21:11:27.029 [info] ExtensionService#_doActivateExtension anysphere.cursor-mcp, startup: false, activationEvent: 'api', root cause: anysphere.cursor-agent-exec
+2026-02-13 21:11:27.533 [info] Extension activated success: anysphere.cursor-mcp — 375ms (code loading: 374ms, activate call: 1ms, activate resolved: 0ms)
+2026-02-13 21:11:27.600 [info] Extension activated success: anysphere.cursor-agent-exec — 1054ms (code loading: 356ms, activate call: 3ms, activate resolved: 695ms)
+2026-02-13 21:11:27.600 [info] Eager extensions activated
+2026-02-13 21:11:27.601 [info] ExtensionService#_doActivateExtension anysphere.cursor-shadow-workspace, startup: false, activationEvent: 'onStartupFinished'
+2026-02-13 21:11:27.601 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-02-13 21:11:27.601 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-02-13 21:11:27.797 [info] Extension activated success: anysphere.cursor-shadow-workspace — 91ms (code loading: 87ms, activate call: 0ms, activate resolved: 4ms)
+2026-02-13 21:11:27.797 [info] Extension activated success: vscode.debug-auto-launch — 93ms (code loading: 89ms, activate call: 0ms, activate resolved: 4ms)
+2026-02-13 21:11:27.798 [info] Extension activated success: vscode.merge-conflict — 116ms (code loading: 108ms, activate call: 3ms, activate resolved: 5ms)
+2026-02-13 21:12:48.194 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onTerminalQuickFixRequest:ms-vscode.npm-command'
+2026-02-13 21:12:48.476 [info] Extension activated success: vscode.npm — 233ms (code loading: 35ms, activate call: 1ms, activate resolved: 197ms)
+2026-02-13 21:12:53.673 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-02-13 21:12:53.674 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2026-02-13 21:12:53.799 [info] Extension activated success: vscode.configuration-editing — 9ms (code loading: 8ms, activate call: 1ms, activate resolved: 0ms)
+2026-02-13 21:12:53.993 [info] Extension activated success: vscode.json-language-features — 262ms (code loading: 69ms, activate call: 0ms, activate resolved: 193ms)
+2026-02-13 21:15:22.727 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10001
+2026-02-13 21:15:24.921 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10001
+2026-02-13 21:17:55.277 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10002
+2026-02-13 21:17:57.640 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2026-02-13 21:18:00.814 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2026-02-13 21:18:04.953 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000

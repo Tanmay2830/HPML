@@ -1,0 +1,27 @@
+2026-02-13 21:04:30.234 [error] Error getting repo info: Failed to execute git
+2026-02-13 21:04:30.235 [error] Error: Failed to execute git
+	at t.Git._execOld (/home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/extensions/git/dist/main.js:2:38047)
+	at async t.Git.exec (/home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/extensions/git/dist/main.js:2:36390)
+	at async t.GitProvider.executeGitCommandStable (/home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/extensions/cursor-retrieval/dist/main.js:2:1466835)
+	at async t.GitProvider.getRepoInfo (/home/tanmayagarwal/.cursor-server/bin/linux-x64/3578107fdf149b00059ddad37048220e41681000/extensions/cursor-retrieval/dist/main.js:2:1440077)
+2026-02-13 21:04:30.235 [info] Creating Indexing Repo client:  https://repo42.cursor.sh
+2026-02-13 21:04:30.235 [info] Creating repo client with backend url: https://repo42.cursor.sh
+2026-02-13 21:04:30.235 [info] Making keys for a new index
+2026-02-13 21:04:30.305 [info] Using the default key from the server for a new index
+2026-02-13 21:04:30.305 [info] InternalRepoInfo constructor with preferredEmbeddingModel 0
+2026-02-13 21:04:30.711 [info] Using existing keys for an index
+2026-02-13 21:04:30.711 [info] InternalRepoInfo constructor with preferredEmbeddingModel 0
+2026-02-13 21:04:30.714 [info] Starting RepoIndexWatcher for repo: 26d7ce6f-ef24-48cb-a0e6-8a984fdd838b, owner: google-oauth2|user_01JTYZPJSNZQS7YC3T5M0QWMZ8
+2026-02-13 21:04:30.714 [error] We currently do not allow indexing the home directory.
+2026-02-13 21:04:30.714 [info] Indexing job successfully done or aborted.
+2026-02-13 21:04:30.739 [warning] Failed to get symbolic ref: Failed to execute git
+2026-02-13 21:04:30.739 [error] Error getting repo info: Failed to execute git
+2026-02-13 21:04:30.745 [warning] Failed to read .git/HEAD: A system error occurred (ENOENT: no such file or directory, open '/home/tanmayagarwal/.git/HEAD')
+2026-02-13 21:04:30.824 [warning] Failed to get branches from remote: Failed to execute git
+2026-02-13 21:04:30.825 [warning] Failed to get default branch from git config: Failed to execute git
+2026-02-13 21:09:10.715 [info] multiCodebaseIndexingJob dispose
+2026-02-13 21:09:10.715 [info] Aborting indexing job.
+2026-02-13 21:09:10.715 [error] We currently do not allow indexing the home directory.
+2026-02-13 21:09:10.715 [info] Indexing job successfully done or aborted.
+2026-02-13 21:09:26.875 [info] multiCodebaseIndexingJob dispose
+2026-02-13 21:09:26.875 [info] Aborting indexing job.
