@@ -1,2 +1,5 @@
 [safe]
 	directory = /home/ta2830
+[user]
+	email = ta2830@columbia.edu
+	name = ta2830

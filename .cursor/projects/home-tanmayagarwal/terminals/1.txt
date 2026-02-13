@@ -1,7 +1,7 @@
 ---
 pid: 9631
 cwd: /home/tanmayagarwal
-last_command: cp -r ../ta2830/.git .
+last_command: git config --global user.name "ta2830"
 last_exit_code: 0
 ---
 tanmayagarwal@instance-hpml-1:~$ ls -la
@@ -57,4 +57,6 @@ tanmayagarwal@instance-hpml-1:/home/ta2830$ cd ..
 tanmayagarwal@instance-hpml-1:/home$ cd tanmayagarwal
 tanmayagarwal@instance-hpml-1:~$ cd /home/tanmayagarwal
 tanmayagarwal@instance-hpml-1:~$ cp -r ../ta2830/.git .
+tanmayagarwal@instance-hpml-1:~$ git config --global user.email "ta2830@columbia.edu"
+tanmayagarwal@instance-hpml-1:~$ git config --global user.name "ta2830"
 tanmayagarwal@instance-hpml-1:~$

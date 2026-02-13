@@ -71,3 +71,9 @@ Error: Failed to apply sandbox: Failed to apply Landlock: Step 5/7 (landlock) fa
 2026-02-13 21:17:57.640 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
 2026-02-13 21:18:00.814 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
 2026-02-13 21:18:04.953 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2026-02-13 21:18:09.957 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2026-02-13 21:18:21.900 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10000
+2026-02-13 21:19:25.698 [warning] [Decorations] CAPPING events from decorations provider vscode.git 10005
+2026-02-13 21:19:27.127 [error] Error: command '_chat.editSessions.accept' not found
+    at Odc._tryExecuteCommand (vscode-file://vscode-app/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/workbench.desktop.main.js:33975:3343)
+    at Odc.executeCommandImpl (vscode-file://vscode-app/Applications/Cursor.app/Contents/Resources/app/out/vs/workbench/workbench.desktop.main.js:33975:2847)
