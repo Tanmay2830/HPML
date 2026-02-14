@@ -22,20 +22,16 @@ def main():
 
     for r in range(reps):
         t0 = time.perf_counter()
-        result = float(np.dot(A, B))   # optimized BLAS
+        result = float(np.dot(A, B)) 
         t1 = time.perf_counter()
         sink += result
         times[r] = (t1 - t0)
 
-    # mean over second half
     start = reps // 2
     mean_t = float(times[start:].mean())
-
-    # bandwidth: read A and B => 2*N*4 bytes
     bytes_moved = N * 2 * 4.0
     bw_gbs = (bytes_moved / mean_t) / 1e9
 
-    # FLOPs: 2 per element
     flops_per_sec = (2.0 * N) / mean_t
 
     print(f"N: {N} <T>: {mean_t:.6f} sec B: {bw_gbs:.6f} GB/sec F: {flops_per_sec:.6f} FLOP/sec")

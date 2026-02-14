@@ -1,10 +1,9 @@
-#!/usr/bin/env python3
 import sys
 import time
 import numpy as np
 
 def dp_loop(N, A, B):
-    r = 0.0  # python float (double precision accumulator)
+    r = 0.0
     for j in range(N):
         r += float(A[j]) * float(B[j])
     return r
@@ -20,7 +19,6 @@ def main():
         print("Error: N and repetitions must be positive.", file=sys.stderr)
         sys.exit(1)
 
-    # float32 arrays (as required)
     A = np.ones(N, dtype=np.float32)
     B = np.ones(N, dtype=np.float32)
 
@@ -34,20 +32,16 @@ def main():
         sink += result
         times[r] = (t1 - t0)
 
-    # mean over second half
     start = reps // 2
     mean_t = float(times[start:].mean())
 
-    # bandwidth: read A and B => 2*N*4 bytes
     bytes_moved = N * 2 * 4.0
     bw_gbs = (bytes_moved / mean_t) / 1e9
 
-    # FLOPs: 2 per element
     flops_per_sec = (2.0 * N) / mean_t
 
     print(f"N: {N} <T>: {mean_t:.6f} sec B: {bw_gbs:.6f} GB/sec F: {flops_per_sec:.6f} FLOP/sec")
 
-    # prevent optimization/removal
     if sink == 1234567.0:
         print("Impossible sink:", sink)
 

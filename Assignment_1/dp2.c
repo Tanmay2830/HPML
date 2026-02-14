@@ -14,7 +14,7 @@ float dpunroll(long N, float *pA, float *pB) {
     float R = 0.0f;
 
     long j = 0;
-    long limit = N - (N % 4);   // largest multiple of 4 <= N
+    long limit = N - (N % 4);
 
     for (; j < limit; j += 4) {
         R += pA[j]   * pB[j]
@@ -23,7 +23,6 @@ float dpunroll(long N, float *pA, float *pB) {
            + pA[j+3] * pB[j+3];
     }
 
-    // remainder (if N not multiple of 4)
     for (; j < N; j++) {
         R += pA[j] * pB[j];
     }
@@ -63,7 +62,6 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    // initialize to 1.0
     for (long i = 0; i < N; i++) {
         A[i] = 1.0f;
         B[i] = 1.0f;
@@ -75,7 +73,6 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    // prevent dead-code elimination
     volatile float sink = 0.0f;
 
     for (long r = 0; r < reps; r++) {
@@ -86,7 +83,6 @@ int main(int argc, char **argv) {
         times[r] = (t1 - t0);
     }
 
-    // mean over second half
     long start = reps / 2;
     long count = reps - start;
 
@@ -94,11 +90,9 @@ int main(int argc, char **argv) {
     for (long r = start; r < reps; r++) sum += times[r];
     double mean_t = sum / (double)count;
 
-    // bandwidth: read A and B => 2*N*4 bytes
     double bytes_moved = (double)N * 2.0 * (double)sizeof(float);
     double bw_gbs = (bytes_moved / mean_t) / 1e9;
 
-    // flops: 1 mul + 1 add per element => 2N
     double flops_per_sec = (2.0 * (double)N) / mean_t;
 
     printf("N: %ld <T>: %.6f sec B: %.6f GB/sec F: %.6f FLOP/sec\n",
