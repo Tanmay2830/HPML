@@ -4,7 +4,7 @@
 #include <time.h>
 #include <errno.h>
 
-#include <cblas.h>
+#include <mkl_cblas.h>
 
 static inline double now_seconds_monotonic(void) {
     struct timespec ts;
@@ -13,7 +13,7 @@ static inline double now_seconds_monotonic(void) {
 }
 
 float bdp(long N, float *pA, float *pB) {
-    return cblas_sdot((int)N, pA, 1, pB, 1);
+    return cblas_sdot((MKL_INT)N, pA, 1, pB, 1);
 }
 
 static void *xaligned_alloc(size_t alignment, size_t size) {
