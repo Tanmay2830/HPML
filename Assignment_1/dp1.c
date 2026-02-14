@@ -1,7 +1,6 @@
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <time.h>
 #include <errno.h>
 
@@ -51,6 +50,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
+    // initialize to 1.0
     for (long i = 0; i < N; i++) {
         A[i] = 1.0f;
         B[i] = 1.0f;
@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    // Prevent dead-code elimination: volatile sink
+    // prevents compiler from removing dp() call
     volatile float sink = 0.0f;
 
     for (long r = 0; r < reps; r++) {
@@ -73,24 +73,25 @@ int main(int argc, char **argv) {
         times[r] = (t1 - t0);
     }
 
-    long start = reps / 2;            // second half
+    // mean over second half
+    long start = reps / 2;
     long count = reps - start;
 
     double sum = 0.0;
     for (long r = start; r < reps; r++) sum += times[r];
     double mean_t = sum / (double)count;
 
-    // Bytes moved (approx): read A and B => 2 * N * 4 bytes
+    // bandwidth: read A and B (2 arrays) => 2*N*4 bytes
     double bytes_moved = (double)N * 2.0 * (double)sizeof(float);
     double bw_gbs = (bytes_moved / mean_t) / 1e9;
 
-    // FLOPs: N multiplies + N adds => 2N FLOPs
+    // flops: 1 mul + 1 add per element => 2N
     double flops_per_sec = (2.0 * (double)N) / mean_t;
 
     printf("N: %ld <T>: %.6f sec B: %.6f GB/sec F: %.6f FLOP/sec\n",
            N, mean_t, bw_gbs, flops_per_sec);
 
-    // Print sink so compiler can't assume it's unused
+    // use sink so it can't be optimized away
     if (sink == 1234567.0f) {
         printf("Impossible sink: %f\n", sink);
     }

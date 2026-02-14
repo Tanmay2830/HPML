@@ -1,11 +1,10 @@
 #define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <time.h>
 #include <errno.h>
 
-#include <mkl_cblas.h>
+#include <cblas.h>
 
 static inline double now_seconds_monotonic(void) {
     struct timespec ts;
@@ -14,17 +13,13 @@ static inline double now_seconds_monotonic(void) {
 }
 
 float bdp(long N, float *pA, float *pB) {
-    // MKL single-precision dot
-    return cblas_sdot((MKL_INT)N, pA, 1, pB, 1);
+    return cblas_sdot((int)N, pA, 1, pB, 1);
 }
 
 static void *xaligned_alloc(size_t alignment, size_t size) {
     void *p = NULL;
     int rc = posix_memalign(&p, alignment, size);
-    if (rc != 0) {
-        errno = rc;
-        return NULL;
-    }
+    if (rc != 0) { errno = rc; return NULL; }
     return p;
 }
 
@@ -46,20 +41,14 @@ int main(int argc, char **argv) {
     float *A = (float *)xaligned_alloc(64, bytes);
     float *B = (float *)xaligned_alloc(64, bytes);
     if (!A || !B) {
-        fprintf(stderr, "Allocation failed (need %zu bytes per array). Try smaller N or more RAM.\n", bytes);
+        fprintf(stderr, "Allocation failed (need %zu bytes per array).\n", bytes);
         return 1;
     }
 
-    for (long i = 0; i < N; i++) {
-        A[i] = 1.0f;
-        B[i] = 1.0f;
-    }
+    for (long i = 0; i < N; i++) { A[i] = 1.0f; B[i] = 1.0f; }
 
     double *times = (double *)malloc((size_t)reps * sizeof(double));
-    if (!times) {
-        fprintf(stderr, "Failed to allocate times array.\n");
-        return 1;
-    }
+    if (!times) { fprintf(stderr, "Failed to allocate times array.\n"); return 1; }
 
     volatile float sink = 0.0f;
 
@@ -86,9 +75,7 @@ int main(int argc, char **argv) {
     printf("N: %ld <T>: %.6f sec B: %.6f GB/sec F: %.6f FLOP/sec\n",
            N, mean_t, bw_gbs, flops_per_sec);
 
-    if (sink == 1234567.0f) {
-        printf("Impossible sink: %f\n", sink);
-    }
+    if (sink == 1234567.0f) printf("Impossible sink: %f\n", sink);
 
     free(times);
     free(A);
